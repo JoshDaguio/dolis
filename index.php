@@ -121,7 +121,7 @@ One Slice at a Time</h3>
                 </div>
                     <div class="row">
                         <?php
-                                        $select_product = mysqli_query($conn, "SELECT * FROM `products` WHERE id IN (3,7,8,11)") or die('query failed');
+                                        $select_product = mysqli_query($conn, "SELECT * FROM `products` WHERE id IN (1,2,3,4)") or die('query failed');
                                         if (mysqli_num_rows($select_product) > 0) 
                                         {
                                         while ($fetch_product = mysqli_fetch_assoc($select_product)) 
