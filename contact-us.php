@@ -63,6 +63,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <?php include 'head.php'; ?>
 
     <body>
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MJ42LCQN"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
         <!-- ======= Header ======= -->
         <header id="header" class="fixed-top">
             <div class="container d-flex align-items-center justify-content-between">

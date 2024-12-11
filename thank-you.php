@@ -29,6 +29,11 @@ include 'config.php';
         </header>
         <!-- End Header -->
 
+        <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MJ42LCQN"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
+
         <main id="main">
             <section id="thank-you" class="thank-you section-bg">
                 <div class="container" data-aos="fade-up">
