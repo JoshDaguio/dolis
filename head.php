@@ -42,7 +42,6 @@ $pageKeywords = isset($pageKeywords) ? $pageKeywords : 'cakes, pastries, bakery,
     <link rel="stylesheet" href="assets/vendor/animate.css/animate.min.css">
     <link rel="stylesheet" href="assets/vendor/aos/aos.css">
 
-<<<<<<< HEAD
     <!-- Main CSS File -->
     <link rel="stylesheet" href="assets/css/style.css">
 
@@ -298,7 +297,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     </script>
 </head>
-=======
     <!-- CSS File -->
     <link href="assets/css/style.css" rel="stylesheet">
 
@@ -321,4 +319,3 @@ document.addEventListener('DOMContentLoaded', function() {
     </script>
    
   </head>
->>>>>>> 9ace0d046185b60f88aa17d2d537b7a89287f792

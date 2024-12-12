@@ -6,8 +6,6 @@
     <title>Menu - Dolis Cakes and Pastries</title>
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <?php include 'head.php'; ?>
     <style>
     .hero-section {
@@ -32,7 +30,6 @@
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-<<<<<<< HEAD
 /* Adjust header to be truly fixed */
 #header {
     position: fixed;
@@ -228,33 +225,17 @@ body {
 </head>
 <body class="bg-gray-50">
 
+        <!-- Google Tag Manager (noscript) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MJ42LCQN"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
+
+
     <!-- Hero Section -->
         <section class="hero-section flex items-center justify-center text-center">
             <div class="absolute inset-0">
                 <img src="assets/img/menu-hero.jpg" alt="Hero Background" class="w-full h-full object-cover">
                 <div class="absolute inset-0 bg-black opacity-60"></div>
-=======
-  <body>
-      <!-- Google Tag Manager (noscript) -->
-      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MJ42LCQN"
-      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-      <!-- End Google Tag Manager (noscript) -->
-       
-    <!-- Empty Cart Modal -->
-    <div class="modal fade" id="cartModal" tabindex="-1" role="dialog" aria-labelledby="cartModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-lg" role="document">
-        <!-- add modal-lg class to the modal-dialog to make it large -->
-        <div class="modal-content custom-modal">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <div class="d-flex justify-content-center mb-4">
-              <!-- add d-flex and justify-content-center classes to center the image -->
-              <img src="assets\img\cart-modal.png" alt="Empty Cart" class="img-fluid">
->>>>>>> 9ace0d046185b60f88aa17d2d537b7a89287f792
             </div>
             <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <h1 class="text-4xl md:text-6xl font-bold text-white mb-4" data-aos="fade-down">
