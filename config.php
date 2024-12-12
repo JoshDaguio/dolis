@@ -3,5 +3,12 @@
 ?>
 
 <?php
-   $conn = mysqli_connect('dolisbyvicky.shop','u749805223_dolis_db','Dolisbyvicky@12345678','u749805223_dolis_db') or die('connection failed');
+   $conn = mysqli_connect('localhost', 'u749805223_vicky', 'Dolisbyvicky@12345678', 'u749805223_dolis');
+
+
+   if (!$conn) {
+      die('Connection failed: ' . mysqli_connect_error());
+   } else {
+      echo 'Connection successful!';
+   }
 ?>
