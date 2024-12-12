@@ -494,7 +494,7 @@ include 'config.php';
     <div class="container" data-aos="fade-up">
         <!-- Section Header -->
         <div class="text-center mb-5">
-            <span class="badge bg-soft-primary text-primary mb-3 px-3 py-2 rounded-pill">Our Popular Picks</span>
+        <span class="badge bg-soft-primary mb-3 px-3 py-2 rounded-pill" style="color: #60aba7;">Our Popular Picks</span>
             <h2 class="display-5 mb-3" style="color: #bb3b47;">Best Sellers</h2>
             <p class="text-highlight">Choose from our most loved cakes</p>
         </div>

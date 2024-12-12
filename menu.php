@@ -146,8 +146,8 @@ body {
             position: absolute;
             top: 1rem;
             right: 1rem;
-            background-color: rgba(255, 255, 255, 0.95);
-            color: #bb3b47;
+            background-color: #60aba7;
+            color: white;
             padding: 0.5rem 1rem;
             border-radius: 999px;
             font-weight: 600;

@@ -212,7 +212,7 @@ $pageKeywords = isset($pageKeywords) ? $pageKeywords : 'cakes, pastries, bakery,
         <div class="d-flex align-items-center justify-content-between">
             <!-- Logo Section -->
             <a href="index.php" class="logo d-flex align-items-center">
-                <img src="assets/img/logo.png" alt="Dolis" class="img-fluid me-2" style="max-height: 50px;">
+                <img src="assets/img/logonew.png" alt="Dolis" class="img-fluid me-2" style="height: 80px;">
             </a>
 
             <!-- Mobile Toggle for Small Screens -->
