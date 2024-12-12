@@ -219,19 +219,48 @@ if(isset($_GET['id'])) {
 
                         <div class="specifications">
                             <h3 class="spec-title">Product Specifications</h3>
-                            <div class="spec-item">
-                                <div class="spec-label">Size</div>
-                                <div class="spec-value">10 inches</div>
-                            </div>
-                            <div class="spec-item">
-                                <div class="spec-label">Serves</div>
-                                <div class="spec-value">5-8 people</div>
-                            </div>
-                            <div class="spec-item">
-                                <div class="spec-label">Best Before</div>
-                                <div class="spec-value">3-4 days when refrigerated</div>
-                            </div>
+                            <?php if (in_array($fetch_product['id'], [1, 2, 3])) { ?>
+                                <div class="spec-item">
+                                    <div class="spec-label">Size</div>
+                                    <div class="spec-value">10 inches</div>
+                                </div>
+                                <div class="spec-item">
+                                    <div class="spec-label">Serves</div>
+                                    <div class="spec-value">5-8 people</div>
+                                </div>
+                                <div class="spec-item">
+                                    <div class="spec-label">Best Before</div>
+                                    <div class="spec-value">3-4 days when refrigerated</div>
+                                </div>
+                            <?php } elseif ($fetch_product['id'] == 4) { ?>
+                                <div class="spec-item">
+                                    <div class="spec-label">Weight</div>
+                                    <div class="spec-value">500 grams</div>
+                                </div>
+                                <div class="spec-item">
+                                    <div class="spec-label">Serves</div>
+                                    <div class="spec-value">4-6 people</div>
+                                </div>
+                                <div class="spec-item">
+                                    <div class="spec-label">Best Before</div>
+                                    <div class="spec-value">1 week when stored in an airtight container</div>
+                                </div>
+                            <?php } elseif ($fetch_product['id'] == 5) { ?>
+                                <div class="spec-item">
+                                    <div class="spec-label">Size</div>
+                                    <div class="spec-value">5 cupcakes per box</div>
+                                </div>
+                                <div class="spec-item">
+                                    <div class="spec-label">Serves</div>
+                                    <div class="spec-value">1-2 people per cupcake</div>
+                                </div>
+                                <div class="spec-item">
+                                    <div class="spec-label">Best Before</div>
+                                    <div class="spec-value">2-3 days when refrigerated</div>
+                                </div>
+                            <?php } ?>
                         </div>
+
                     </div>
                 </div>
             </div>
