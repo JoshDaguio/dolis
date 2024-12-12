@@ -98,7 +98,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         }
 
         .contact-icon i {
-            color: #ed502e;
+            color: #bb3b47;
             font-size: 24px;
         }
 
@@ -123,7 +123,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         }
 
         .form-control:focus {
-            border-color: #ed502e;
+            border-color: #bb3b47;
             box-shadow: none;
         }
 
@@ -133,7 +133,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         }
 
         .submit-btn {
-            background: #ed502e;
+            background: #bb3b47;
             color: white;
             padding: 15px 40px;
             border-radius: 30px;
@@ -167,13 +167,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             height: 40px;
             border-radius: 50%;
             background: #fef1ef;
-            color: #ed502e;
+            color: #bb3b47;
             margin: 0 5px;
             transition: all 0.3s ease;
         }
 
         .social-links a:hover {
-            background: #ed502e;
+            background: #bb3b47;
             color: white;
             transform: translateY(-3px);
         }

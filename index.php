@@ -189,9 +189,8 @@ include 'config.php';
         }
 
         .badge.bg-soft-primary {
-            background-color: rgba(187, 59, 71, 0.1);
-            color: #bb3b47;
-            font-weight: 500;
+            background-color: rgba(96, 171, 167, 0.1); 
+            color: #60aba7;
         }
 
         .social-media-title {
@@ -320,18 +319,6 @@ include 'config.php';
     transition: all 0.3s ease;
 }
 
-.btn-custom {
-    display: inline-block;
-    padding: 12px 24px;
-    font-size: 1rem;
-    color: #ffffff;
-    background-color: #bb3b47;
-    border-radius: 50px;
-    text-decoration: none;
-    overflow: hidden;
-    position: relative;
-    transition: all 0.3s ease;
-}
 
 .btn-custom span {
     display: inline-block;
@@ -355,8 +342,8 @@ include 'config.php';
 }
 
 .feature-icon i {
-    font-size: 2rem; 
-    color: #EA5A1E; 
+    font-size: 2rem;
+    color: #bb3b47;
 }
 
 .feature-card {
@@ -365,7 +352,19 @@ include 'config.php';
     background-color: transparent; /* Optional: Keeps the card background clean */
 }
 
+.newsletter-form .btn-primary {
+    background-color: #bb3b47;
+    border-color: #bb3b47;
+    color: white;
+    transition: all 0.3s ease;
+}
 
+.newsletter-form .btn-primary:hover {
+    background-color: #a33239; /* Darker shade for hover */
+    border-color: #a33239;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(187, 59, 71, 0.2);
+}
 
 .btn-outline-primary {
     color: #bb3b47 !important;
@@ -380,12 +379,14 @@ include 'config.php';
 
 /* Update view all button color as well for consistency */
 .btn-view-all {
-    background-color: #bb3b47 !important;
+    background-color: #60aba7 !important;
     border: none !important;
 }
 
 .btn-view-all:hover {
-    background-color: #a33239 !important; /* Slightly darker shade for hover */
+    background-color: #549995 !important; /* Slightly darker shade for hover */
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(96, 171, 167, 0.2);
 }
 
 .text-highlight {
@@ -461,32 +462,32 @@ include 'config.php';
 
     <!-- Featured Section -->
     <section class="featured-section">
-        <div class="container">
-            <div class="row mb-5">
-                <div class="col-lg-4 mb-4">
-                    <div class="feature-icon">
-                        <i class="bi bi-award" style="font-size: 2rem; color: #EA5A1E;"></i>
-                    </div>
-                    <h3 class="text-center font-alice mb-3">Premium Quality</h3>
-                    <p class="text-center text-muted">Made with the finest ingredients for exceptional taste</p>
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-lg-4 mb-4">
+                <div class="feature-icon">
+                    <i class="bi bi-award" style="font-size: 2rem; color: #bb3b47;"></i>
                 </div>
-                <div class="col-lg-4 mb-4">
-                    <div class="feature-icon">
-                        <i class="bi bi-clock" style="font-size: 2rem; color: #EA5A1E;"></i>
-                    </div>
-                    <h3 class="text-center font-alice mb-3">Fresh Daily</h3>
-                    <p class="text-center text-muted">Baked fresh every morning just for you</p>
+                <h3 class="text-center font-alice mb-3">Premium Quality</h3>
+                <p class="text-center text-muted">Made with the finest ingredients for exceptional taste</p>
+            </div>
+            <div class="col-lg-4 mb-4">
+                <div class="feature-icon">
+                    <i class="bi bi-clock" style="font-size: 2rem; color: #bb3b47;"></i>
                 </div>
-                <div class="col-lg-4 mb-4">
-                    <div class="feature-icon">
-                        <i class="bi bi-heart" style="font-size: 2rem; color: #EA5A1E;"></i>
-                    </div>
-                    <h3 class="text-center font-alice mb-3">Made with Love</h3>
-                    <p class="text-center text-muted">Crafted with passion and attention to detail</p>
+                <h3 class="text-center font-alice mb-3">Fresh Daily</h3>
+                <p class="text-center text-muted">Baked fresh every morning just for you</p>
+            </div>
+            <div class="col-lg-4 mb-4">
+                <div class="feature-icon">
+                    <i class="bi bi-heart" style="font-size: 2rem; color: #bb3b47;"></i>
                 </div>
+                <h3 class="text-center font-alice mb-3">Made with Love</h3>
+                <p class="text-center text-muted">Crafted with passion and attention to detail</p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Best Sellers Section -->
 <section class="bestsellers py-5">
@@ -542,12 +543,11 @@ include 'config.php';
 
         <!-- View All Button -->
         <div class="text-center mt-5">
-            <a href="menu.php" class="btn btn-primary btn-view-all rounded-pill px-5 py-3">
+            <a href="menu.php" class="btn btn-view-all rounded-pill px-5 py-3">
                 View All Products
                 <i class="bi bi-arrow-right ms-2"></i>
             </a>
         </div>
-    </div>
 
     <style>
 
@@ -646,16 +646,18 @@ include 'config.php';
         }
 
         .btn-view-all {
-            background-color: #0066FF;
-            border: none;
-            font-weight: 500;
+            background-color: #bb3b47 !important;
+            border: none !important;
+            color: white;
             transition: all 0.3s ease;
         }
 
         .btn-view-all:hover {
-            background-color: #0052CC;
+            background-color: white !important;
+            color: #bb3b47 !important;
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 102, 255, 0.2);
+            box-shadow: 0 5px 15px rgba(187, 59, 71, 0.2);
+            border: 2px solid #bb3b47 !important;
         }
 
         .badge-new {
@@ -712,19 +714,6 @@ include 'config.php';
     position: relative;
     overflow: hidden;
 }
-
-.newsletter-section::before {
-    content: '';
-    position: absolute;
-    width: 300px;
-    height: 300px;
-    background: var(--primary);
-    opacity: 0.05;
-    border-radius: 50%;
-    top: -150px;
-    right: -150px;
-}
-
 .newsletter-form {
     max-width: 500px;
     margin: 40px auto;
@@ -732,7 +721,6 @@ include 'config.php';
     display: flex;
     gap: 10px;
 }
-
 .newsletter-input {
     flex: 1;
     padding: 15px 25px;
@@ -742,23 +730,18 @@ include 'config.php';
     transition: all 0.3s ease;
 }
 
-.newsletter-input:focus {
-    border-color: var(--primary);
-    box-shadow: 0 0 0 4px rgba(187, 59, 71, 0.1);
-    outline: none;
-}
-
-.newsletter-form .btn {
+.newsletter-btn {
     padding: 15px 40px;
     border-radius: 50px;
-    background: var(--primary);
+    background-color: #bb3b47;
     border: none;
     color: white;
     font-weight: 500;
     transition: all 0.3s ease;
 }
 
-.newsletter-form .btn:hover {
+.newsletter-btn:hover {
+    background-color: #a33239;
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(187, 59, 71, 0.2);
 }
@@ -871,7 +854,7 @@ include 'config.php';
     <div class="container">
         <!-- Section Header with Enhanced Styling -->
         <div class="social-media-header text-center mb-5">
-            <span class="badge bg-soft-primary text-primary mb-3 px-3 py-2 rounded-pill">Connect With Us</span>
+            <span class="badge bg-soft-primary mb-3 px-3 py-2 rounded-pill">Connect With Us</span>
             <h2 class="section-title mb-3">Join Our Sweet Community</h2>
             <p class="section-subtitle">Follow us for daily cake inspiration and behind-the-scenes moments</p>
             
@@ -969,7 +952,7 @@ include 'config.php';
         <p class="section-subtitle">Subscribe to get special offers and sweet updates</p>
         <form class="newsletter-form">
             <input type="email" class="newsletter-input" placeholder="Enter your email">
-            <button type="submit" class="btn btn-primary">Subscribe</button>
+            <button type="submit" class="newsletter-btn">Subscribe</button>
         </form>
     </div>
 </section>

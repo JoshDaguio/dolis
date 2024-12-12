@@ -17,7 +17,7 @@ if(isset($_GET['id'])) {
     <?php include 'head.php'; ?>
     <style>
         :root {
-            --primary-color: #DC531B;
+            --primary-color: #bb3b47;
         }
 
         body {
@@ -64,7 +64,7 @@ if(isset($_GET['id'])) {
         .product-title {
             font-size: 48px;
             font-weight: 700;
-            background: linear-gradient(45deg, var(--primary-color), #ff8f5d);
+            background: linear-gradient(45deg, var(--primary-color), #bb3b47);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             margin-bottom: 20px;

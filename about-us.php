@@ -11,7 +11,7 @@
     <?php include 'head.php'; ?>
     <style>
         :root {
-            --primary: #ed502e;
+            --primary: #bb3b47;
             --text-dark: #333333;
             --text-light: #666666;
             --bg-light: #fff5f3;
@@ -152,7 +152,7 @@
         }
 
         .value-icon i {
-            color: var(--primary);
+            color: #bb3b47; 
             font-size: 2rem;
         }
 
@@ -208,6 +208,7 @@
             color: var(--primary);
             opacity: 0.2;
             font-family: 'Georgia', serif;
+            color: #bb3b47;
         }
 
         @media (max-width: 768px) {

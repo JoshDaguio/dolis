@@ -133,7 +133,7 @@ body {
             position: absolute;
             top: 1rem;
             left: 1rem;
-            background-color: rgba(220, 83, 27, 0.9);
+            background-color: rgba(187, 59, 71, 0.9);
             color: white;
             padding: 0.5rem 1rem;
             border-radius: 999px;
@@ -147,7 +147,7 @@ body {
             top: 1rem;
             right: 1rem;
             background-color: rgba(255, 255, 255, 0.95);
-            color: #DC531B;
+            color: #bb3b47;
             padding: 0.5rem 1rem;
             border-radius: 999px;
             font-weight: 600;
@@ -180,7 +180,7 @@ body {
         .view-details-btn {
             display: inline-block;
             width: 100%;
-            background: linear-gradient(45deg, #DC531B, #ff7b5c);
+            background: linear-gradient(45deg, #bb3b47, #ff7b5c);
             color: white;
             padding: 0.75rem 1.5rem;
             border-radius: 10px;
@@ -202,25 +202,28 @@ body {
         }
 
         .category-btn {
-            padding: 0.75rem 1.5rem;
-            border-radius: 999px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            background: white;
-            color: #666;
-            border: 2px solid #eee;
-        }
+    padding: 0.75rem 1.5rem;
+    border-radius: 999px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    background: white;
+    color: #666;  /* Default color */
+    border: 2px solid #eee;
+}
 
-        .category-btn.active {
-            background: #DC531B;
-            color: white;
-            border-color: #DC531B;
-        }
+.category-btn.active {
+    background: #bb3b47;
+    color: white;  /* Making sure active state text is white */
+    border-color: #bb3b47;
+}
 
-        .category-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
+.category-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    background: #bb3b47;  /* Added hover background */
+    color: white;  /* Added hover text color */
+    border-color: #bb3b47;  /* Added hover border color */
+}
     </style>
 </head>
 <body class="bg-gray-50">
