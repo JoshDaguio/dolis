@@ -950,7 +950,7 @@ include 'config.php';
     <div class="container">
         <h2 class="section-title">Stay Updated</h2>
         <p class="section-subtitle">Subscribe to get special offers and sweet updates</p>
-        <form class="newsletter-form">
+        <form class="newsletter-form" id="subscribe-form">
             <input type="email" class="newsletter-input" placeholder="Enter your email">
             <button type="submit" class="newsletter-btn">Subscribe</button>
         </form>
