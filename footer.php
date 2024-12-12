@@ -4,7 +4,7 @@
             <!-- Logo Section -->
             <div class="col-lg-4 mb-4 text-center text-lg-start">
                 <a href="index.php" class="d-inline-block mb-4">
-                    <img src="assets/img/logo-footer.png" alt="Dolis" class="img-fluid" style="max-height: 60px;">
+                    <img src="assets/img/logonew.png" alt="Dolis" class="img-fluid" style="height: 110px;">
                 </a>
                 <p class="text-muted mb-4">Bringing sweetness to your special moments with our handcrafted cakes and pastries.</p>
                 <div class="social-links mb-4">
