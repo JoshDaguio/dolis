@@ -543,7 +543,7 @@ include 'config.php';
         <!-- View All Button -->
         <div class="text-center mt-5">
             <a href="menu.php" class="btn btn-primary btn-view-all rounded-pill px-5 py-3">
-                View All Cakes
+                View All Products
                 <i class="bi bi-arrow-right ms-2"></i>
             </a>
         </div>

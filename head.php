@@ -230,7 +230,7 @@ $pageKeywords = isset($pageKeywords) ? $pageKeywords : 'cakes, pastries, bakery,
                     </li>
                     <li>
                         <a href="menu.php" class="nav-link <?php echo (basename($_SERVER['PHP_SELF']) == 'menu.php') ? 'active' : ''; ?>">
-                            <i class="bi bi-menu-button-wide me-2"></i>Menu
+                            <i class="bi bi-menu-button-wide me-2"></i>Products
                         </a>
                     </li>
                     <li>
