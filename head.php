@@ -25,11 +25,11 @@ $pageKeywords = isset($pageKeywords) ? $pageKeywords : 'cakes, pastries, bakery,
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-TE7PZBBWP0"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-      gtag('config', 'G-TE7PZBBWP0');
+    gtag('config', 'G-TE7PZBBWP0');
     </script>
    
     <!-- Open Graph / Social Media Meta Tags -->
