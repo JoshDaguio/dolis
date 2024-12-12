@@ -35,12 +35,45 @@
             color: white;
         }
 
+<<<<<<< HEAD
         .hero-title {
             font-size: 3.5rem;
             font-weight: 700;
             margin-bottom: 1rem;
             font-family: 'Lora', serif;
         }
+=======
+  <body>
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MJ42LCQN"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+     
+    <!-- Empty Cart Modal -->
+    <div class="modal fade" id="cartModal" tabindex="-1" role="dialog" aria-labelledby="cartModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document">
+        <!-- add modal-lg class to the modal-dialog to make it large -->
+        <div class="modal-content custom-modal">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="d-flex justify-content-center mb-4">
+              <!-- add d-flex and justify-content-center classes to center the image -->
+              <img src="assets\img\cart-modal.png" alt="Empty Cart" class="img-fluid">
+            </div>
+            <div class="text-center">
+              <h3>It looks like you haven't picked any cakes yet.</h3>
+              <h5>Browse our menu and add your favorites to your cart.</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+>>>>>>> 9ace0d046185b60f88aa17d2d537b7a89287f792
 
         .hero-subtitle {
             font-size: 1.2rem;

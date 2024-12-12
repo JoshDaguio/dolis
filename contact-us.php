@@ -66,11 +66,37 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             color: white;
         }
 
+<<<<<<< HEAD
         .contact-section {
             padding: 80px 0;
             background-color: #fff;
             position: relative;
         }
+=======
+    <body>
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MJ42LCQN"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+        <!-- ======= Header ======= -->
+        <header id="header" class="fixed-top">
+            <div class="container d-flex align-items-center justify-content-between">
+                <a href="index.php" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>
+                <nav id="navbar" class="navbar">
+                    <ul>
+                        <li><a class="nav-link" href="index.php">Home</a></li>
+                        <li><a class="nav-link" href="menu.php">Menu</a></li>
+                        <li><a class="nav-link" href="about-us.php">About Us</a></li>
+                        <li><a class="nav-link active" href="contact-us.php">Contact Us</a></li>
+                    </ul>
+                    <i class="bi bi-list mobile-nav-toggle"></i>
+                </nav>
+            </div>
+        </header>
+        <!-- End Header -->
+>>>>>>> 9ace0d046185b60f88aa17d2d537b7a89287f792
 
         .contact-info-box {
             background: white;
