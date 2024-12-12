@@ -1,152 +1,348 @@
-<?php
-include 'config.php';
-    ?>
+<?php include 'config.php'; ?>
 
 <!DOCTYPE html>
 <html lang="en">
+<head>
+    <title>Menu - Dolis Cakes and Pastries</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <?php include 'head.php'; ?>
+    <style>
+    .hero-section {
+    position: relative;
+    height: 40vh;
+    min-height: 300px;
+    max-height: 400px;
+    overflow: hidden;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('assets/img/menu-hero.jpg');
+    background-size: cover;
+    background-position: center;
+}
 
-  <!-- Page Title -->
-  <head><title>Products</title></head>
+.hero-section img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 
-  <?php include 'head.php'; ?>
+.hero-section h1, 
+.hero-section p {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
 
-  <body>
-    <!-- Empty Cart Modal -->
-    <div class="modal fade" id="cartModal" tabindex="-1" role="dialog" aria-labelledby="cartModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-lg" role="document">
-        <!-- add modal-lg class to the modal-dialog to make it large -->
-        <div class="modal-content custom-modal">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <div class="d-flex justify-content-center mb-4">
-              <!-- add d-flex and justify-content-center classes to center the image -->
-              <img src="assets\img\cart-modal.png" alt="Empty Cart" class="img-fluid">
+/* Adjust header to be truly fixed */
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: white;
+}
+
+/* Add padding to body to account for fixed header */
+body {
+    padding-top: 72px; /* Height of your header */
+}
+
+/* Hero section text styles */
+.hero-section h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: bold;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.hero-section p {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        height: 35vh;
+        min-height: 250px;
+    }
+}
+
+/* Adjust text sizes for better proportion */
+.hero-section h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem); /* Responsive font size */
+    font-weight: bold;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.hero-section p {
+    font-size: clamp(1rem, 2vw, 1.25rem); /* Responsive font size */
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .hero-section {
+        height: 35vh;
+        min-height: 250px;
+    }
+}
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .product-image-wrapper {
+            position: relative;
+            padding-top: 100%;
+            overflow: hidden;
+        }
+
+        .product-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .product-card:hover .product-image {
+            transform: scale(1.1);
+        }
+
+        .product-type-badge {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background-color: rgba(220, 83, 27, 0.9);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 999px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            z-index: 10;
+        }
+
+        .price-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background-color: rgba(255, 255, 255, 0.95);
+            color: #DC531B;
+            padding: 0.5rem 1rem;
+            border-radius: 999px;
+            font-weight: 600;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 10;
+        }
+
+        .product-info {
+            padding: 1.5rem;
+        }
+
+        .product-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-description {
+            color: #666;
+            font-size: 0.875rem;
+            line-height: 1.5;
+            margin-bottom: 1rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .view-details-btn {
+            display: inline-block;
+            width: 100%;
+            background: linear-gradient(45deg, #DC531B, #ff7b5c);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .view-details-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(220, 83, 27, 0.3);
+        }
+
+        .category-filters {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .category-btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 999px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            background: white;
+            color: #666;
+            border: 2px solid #eee;
+        }
+
+        .category-btn.active {
+            background: #DC531B;
+            color: white;
+            border-color: #DC531B;
+        }
+
+        .category-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <!-- Hero Section -->
+        <section class="hero-section flex items-center justify-center text-center">
+            <div class="absolute inset-0">
+                <img src="assets/img/menu-hero.jpg" alt="Hero Background" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black opacity-60"></div>
             </div>
-            <div class="text-center">
-              <h3>It looks like you haven't picked any cakes yet.</h3>
-              <h5>Browse our menu and add your favorites to your cart.</h5>
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <h1 class="text-4xl md:text-6xl font-bold text-white mb-4" data-aos="fade-down">
+                    Our Sweet Creations
+                </h1>
+                <p class="text-xl text-gray-200 mb-8" data-aos="fade-up" data-aos-delay="200">
+                    Each treat is crafted with love and premium ingredients
+                </p>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
+        </section>
 
-    <!-- ======= Header ======= -->
-    <header id="header" class="fixed-top">
-        <div class="container d-flex align-items-center justify-content-between">
-            <a href="index.php" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>
-            <nav id="navbar" class="navbar">
-            <ul>
-                <li><a class="nav-link" href="index.php">Home</a></li>
-                <li><a class="nav-link active" href="menu.php">Menu</a></li>
-                <li><a class="nav-link" href="about-us.php">About Us</a></li>
-                <li><a class="nav-link" href="contact-us.php">Contact Us</a></li>
-                
-            </span>            
+    <!-- Menu Section -->
+    <section class="py-24">
+        <div class="container mx-auto px-4">
+            <!-- Category Filters -->
+            <div class="category-filters" data-aos="fade-up">
+                <button class="category-btn active" data-category="all">All Products</button>
+                <button class="category-btn" data-category="cake">Cakes</button>
+                <button class="category-btn" data-category="cupcake">Cupcakes</button>
+                <button class="category-btn" data-category="cookie">Cookies</button>
+            </div>
 
-            </ul>
-            <i class="bi bi-list mobile-nav-toggle"></i>
-            </nav>
-            <!-- .navbar -->
-        </div>
-    </header>
-    <!-- End Header -->
-    
-    <!-- Login Modal -->
-    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="loginModalLabel">Welcome Back!</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <form action="" method="post">
-              <div class="form-group">
-                <label for="username">Email</label>
-                <input type="email" name="email" class="form-control" id="username" required>
-              </div>
-              <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" name="password" class="form-control" id="password" required>
-              </div>
-              <div class="text-center">
-                <button type="submit" name="submit" class="btn btn-primary custom-login-btn" value="login now">Login</button>
-              </div>
-              <div class="text-center mt-3">
-                <p>Don't have an account? <a href="register.php">Register Here</a></p>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <main id="main">
-      <!-- ======= Menu Section ======= -->
-      <section id="team" class="team section-bg">
-        <div>
-          <img src="assets/img/element-yellow.png" class="yellow-element">
-        </div>
-        <div class="container">
-          <div class="section-title" style="margin-top: 80px;">
-            <h2>Our Menu</h2>
-            <p >From our oven to your doors, our delightfully decadent 10" inch cakes are crafted and baked fresh daily! </p>
-          </div>
-          <div class="row">
-            <?php
-                            $select_product = mysqli_query($conn, "SELECT * FROM `products`") or die('query failed');
-                            if (mysqli_num_rows($select_product) > 0) 
-                            {
-                              while ($fetch_product = mysqli_fetch_assoc($select_product)) 
-                              {
-                            ?>
-            <div class="col-md-3 mb-4">
-              <div class="card h-100">
-                <!-- Product image -->
-                <img class="card-img-top" src="assets/img/cakes/<?php echo $fetch_product['image']; ?>" alt="">
-                <input type="hidden" name="product_image" value="<?php echo $fetch_product['image']; ?>">
-                <!-- Product details -->
-                <div class="card-body text-center">
-                  <h5 class="card-title fw-bolder text-center"><?php echo $fetch_product['product_name']; ?></h5>
-                  <input type="hidden" name="product_name" value="<?php echo $fetch_product['product_name']; ?>">
-                  <h5 class>₱ <?php echo $fetch_product['price']; ?></h5>
-                  <div class="text-center">
-                    <a class="d-flex justify-content-center" href="cake-details.php?id=<?php echo $fetch_product['id']; ?>" style="font-size: small;">
-                      See cake details
-                    </a>
-                  
-                  </div>
+            <div class="product-grid">
+                <?php
+                $select_product = mysqli_query($conn, "SELECT * FROM `products`") or die('query failed');
+                if (mysqli_num_rows($select_product) > 0) {
+                    while ($fetch_product = mysqli_fetch_assoc($select_product)) {
+                        // Updated category determination logic with cookies
+                        $product_type = strpos(strtolower($fetch_product['product_name']), 'cupcake') !== false ? 'cupcake' : 
+                                      (strpos(strtolower($fetch_product['product_name']), 'chocolate chip') !== false ? 'cookie' : 'cake');
+                                      
+                        // Format display name for the badge
+                        $display_type = ucfirst($product_type);
+                ?>
+                <div class="product-card" data-category="<?php echo $product_type; ?>" data-aos="fade-up">
+                    <div class="product-image-wrapper">
+                        <span class="product-type-badge"><?php echo $display_type; ?></span>
+                        <span class="price-badge">₱<?php echo $fetch_product['price']; ?></span>
+                        <img class="product-image" 
+                             src="assets/img/cakes/<?php echo $fetch_product['image']; ?>" 
+                             alt="<?php echo $fetch_product['product_name']; ?>">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title"><?php echo $fetch_product['product_name']; ?></h3>
+                        <p class="product-description"><?php echo $fetch_product['description']; ?></p>
+                        <a href="cake-details.php?id=<?php echo $fetch_product['id']; ?>" 
+                           class="view-details-btn">
+                            View Details
+                        </a>
+                    </div>
                 </div>
-              </div>
+                <?php
+                    }
+                }
+                ?>
             </div>
-            <?php
-                            }
-                            }
-                            ?>
-          </div>
         </div>
-      </section>
-      <!-- End Menu Section -->
+    </section>
     </main>
-    <!-- End #main -->
 
-    <!-- ======= Footer ======= -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get all filter buttons and products
+            const filterButtons = document.querySelectorAll('.category-btn');
+            const products = document.querySelectorAll('.product-card');
+
+            // Add click event to filter buttons
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    button.classList.add('active');
+                    
+                    // Get selected category
+                    const selectedCategory = button.getAttribute('data-category');
+                    
+                    // Filter products
+                    products.forEach(product => {
+                        const productCategory = product.getAttribute('data-category');
+                        
+                        if (selectedCategory === 'all' || selectedCategory === productCategory) {
+                            // Show product with animation
+                            product.style.opacity = '0';
+                            product.classList.remove('hidden');
+                            setTimeout(() => {
+                                product.style.opacity = '1';
+                            }, 50);
+                        } else {
+                            // Hide product with animation
+                            product.style.opacity = '0';
+                            setTimeout(() => {
+                                product.classList.add('hidden');
+                            }, 300);
+                        }
+                    });
+                });
+            });
+        });
+        </script>
+
+    <!-- Footer -->
     <?php include 'footer.php'; ?>
-    <!-- End Footer -->
 
-    <div id="preloader"></div>
-    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 
-    <!-- Scripts  -->
+    <!-- Scripts -->
     <?php include 'scripts.php'; ?>
-    <!-- End Scripts -->
-  </body>
-
+</body>
 </html>

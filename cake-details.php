@@ -1,187 +1,248 @@
-<?php
-include 'config.php';
-
+<?php include 'config.php';
 session_start();
    
 if(isset($_GET['id'])) {
-   $id = $_GET['id'];
+    $id = $_GET['id'];
 } else {
-     // Handle the case when 'id' is not provided in the URL
-     echo "<script>alert('Invalid cake ID');</script>";
-     echo "<script>window.location.href = 'index.php';</script>";
-     exit();
-   }
+    echo "<script>alert('Invalid cake ID');</script>";
+    echo "<script>window.location.href = 'index.php';</script>";
+    exit();
+}
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+<head>
+    <title>Cake Details - Dolis</title>
+    <?php include 'head.php'; ?>
+    <style>
+        :root {
+            --primary-color: #DC531B;
+        }
 
-  <!-- Page Title -->
-  <head><title>Dolis</title></head>
+        body {
+            background-color: #f5f5f7;
+        }
 
-  <?php include 'head.php'; ?>
+        .product-section {
+            padding-top: 120px;
+            min-height: 100vh;
+            background: linear-gradient(180deg, #fff 0%, #f5f5f7 100%);
+        }
 
-  <body>
+        .back-button {
+            position: fixed;
+            top: 100px;
+            left: 40px;
+            z-index: 100;
+            transition: all 0.3s ease;
+        }
 
-    <!-- Empty Cart Modal -->
-    <div class="modal fade" id="cartModal" tabindex="-1" role="dialog" aria-labelledby="cartModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-lg" role="document">
-        <!-- add modal-lg class to the modal-dialog to make it large -->
-        <div class="modal-content custom-modal">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <div class="d-flex justify-content-center mb-4">
-              <!-- add d-flex and justify-content-center classes to center the image -->
-              <img src="assets\img\cart-modal.png" alt="Empty Cart" class="img-fluid">
-            </div>
-            <div class="text-center">
-              <h3>It looks like you haven't picked any cakes yet.</h3>
-              <h5>Browse our menu and add your favorites to your cart.</h5>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+        .back-button:hover {
+            transform: translateX(-5px);
+        }
 
-    <!-- ======= Header ======= -->
-    <header id="header" class="fixed-top">
-      <div class="container d-flex align-items-center justify-content-between">
-        <a href="index.php" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>
-        <nav id="navbar" class="navbar">
-          <ul>
-            <li><a class="nav-link" href="index.php">Home</a></li>
-            <li><a class="nav-link active" href="menu.php">Menu</a></li>
-            <li><a class="nav-link" href="about-us.php">About Us</a></li>
-            <li><a class="nav-link" href="contact-us.php">Contact Us</a></li>
+        .product-image-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 24px;
+            transition: all 0.5s ease;
+        }
 
+        .product-image {
+            width: 100%;
+            height: auto;
+            transform: scale(1);
+            transition: transform 0.7s ease;
+        }
+
+        .product-image-container:hover .product-image {
+            transform: scale(1.05);
+        }
+
+        .product-title {
+            font-size: 48px;
+            font-weight: 700;
+            background: linear-gradient(45deg, var(--primary-color), #ff8f5d);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+        }
+
+        .product-price {
+            font-size: 24px;
+            color: #1d1d1f;
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+
+        .product-description {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #86868b;
+            margin-bottom: 40px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .info-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .info-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 12px;
+        }
+
+        .info-content {
+            font-size: 15px;
+            color: #1d1d1f;
+            line-height: 1.5;
+        }
+
+        .specifications {
+            margin-top: 60px;
+            padding: 40px;
+            background: white;
+            border-radius: 24px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+        }
+
+        .spec-title {
+            font-size: 24px;
+            font-weight: 600;
+            color: #1d1d1f;
+            margin-bottom: 30px;
+        }
+
+        .spec-item {
+            display: flex;
+            margin-bottom: 20px;
+        }
+
+        .spec-label {
+            width: 140px;
+            font-weight: 500;
+            color: #86868b;
+        }
+
+        .spec-value {
+            flex: 1;
+            color: #1d1d1f;
+        }
+
+        @media (max-width: 768px) {
+            .product-title {
+                font-size: 36px;
+            }
             
-
-          </ul>
-          <i class="bi bi-list mobile-nav-toggle"></i>
-        </nav>
-        <!-- .navbar -->
-      </div>
-    </header>
-    <!-- End Header -->
-
-    <!-- Login Modal -->
-    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="loginModalLabel">Welcome Back!</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <form action="" method="post">
-              <div class="form-group">
-                <label for="username">Email</label>
-                <input type="email" name="email" class="form-control" id="username" required>
-              </div>
-              <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" name="password" class="form-control" id="password" required>
-              </div>
-              <div class="text-center">
-                <button type="submit" name="submit" class="btn btn-primary custom-login-btn" value="login now">Login</button>
-              </div>
-              <div class="text-center mt-3">
-                <p>Don't have an account? <a href="register.php">Register Here</a></p>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-    <main id="main">
-
-      <!-- ======= Breadcrumbs ======= -->
-      <section id="breadcrumbs" class="breadcrumbs">
-         <div class="container">
-            <ol>
-               <li><a href="menu.php"><span>&#8249;</span> Back to Menu</a></li>
-            </ol>
-         </div>
-      </section>
-      <!-- End Breadcrumbs -->
-
-      <?php
-            $select_product = mysqli_query($conn, "SELECT * FROM `products` WHERE id = $id") or die('query failed');
-            if($select_product){
-                $fetch_product = mysqli_fetch_assoc($select_product)
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
             
-            ?>
+            .back-button {
+                top: 80px;
+                left: 20px;
+            }
+        }
+    </style>
+</head>
 
-      <!-- ======= Cake Details Section ======= -->
-      <!-- content -->
-      <section class="py-5">
-        <div class="container">
-          <div class="row gx-5">
-            <aside class="col-lg-6">
-              <div class="border rounded-4 mb-3 d-flex justify-content-center">
-                <a data-fslightbox="mygalley" class="rounded-4" target="" data-type="" href="">
-                  <form method="post" action="">
-                    <img style="max-width: 100%; max-height: 100vh; margin: auto;" class="rounded-4 fit" src="assets/img/cakes/<?php echo $fetch_product['image']; ?>" alt="">
-                </a>
-              </div>
-              <!-- thumbs-wrap.// -->
-              <!-- gallery-wrap .end// -->
-            </aside>
-            <main class="col-lg-6">
-              <div class="ps-lg-3">
-                <h2 class="name" style="color: #DC531B;">
-                  <?php echo $fetch_product['product_name']; ?>
-                  <input type="hidden" name="product_name" value="<?php echo $fetch_product['product_name']; ?>">
-                </h2>
-                <div class="mb-3">
-                  <input type="hidden" name="product_price" value="<?php echo $fetch_product['price']; ?>">
-                  <span class="h5">₱ <?php echo $fetch_product['price']; ?></span>
-                </div>
-                <p class="product_description">
-                  <?php echo $fetch_product['description']; ?>
-                </p>
-                </form>
-                <?php
-                     };
-                     ?>
-                <div class="row">
-                  <dt class="col-3">Allergens:</dt>
-                  <dd class="col-9"><?php echo $fetch_product['allergens']; ?></dd>
-                  <dt class="col-3">Storage:</dt>
-                  <dd class="col-9"><?php echo $fetch_product['storage']; ?></dd>
-                </div>
-                <hr />
-                
+<body>
+    <?php include 'head.php'; ?>
 
-              </div>
-            </main>
-          </div>
+    <a href="menu.php" class="back-button text-decoration-none">
+        <div class="d-flex align-items-center">
+            <i class="bi bi-arrow-left me-2" style="font-size: 20px; color: #86868b;"></i>
+            <span style="color: #86868b;">Back to Menu</span>
         </div>
-      </section>
-      <!-- content -->
-      <!-- End Cake Details Section -->
+    </a>
+
+    <main>
+        <?php
+        $select_product = mysqli_query($conn, "SELECT * FROM `products` WHERE id = $id") or die('query failed');
+        if($select_product){
+            $fetch_product = mysqli_fetch_assoc($select_product);
+        ?>
+        
+        <section class="product-section">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-right">
+                        <div class="product-image-container">
+                            <img class="product-image" src="assets/img/cakes/<?php echo $fetch_product['image']; ?>" alt="<?php echo $fetch_product['product_name']; ?>">
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6" data-aos="fade-left">
+                        <h1 class="product-title"><?php echo $fetch_product['product_name']; ?></h1>
+                        <div class="product-price">₱<?php echo number_format($fetch_product['price'], 2); ?></div>
+                        <p class="product-description"><?php echo $fetch_product['description']; ?></p>
+                        
+                        <div class="info-grid">
+                            <div class="info-card">
+                                <div class="info-title">
+                                    <i class="bi bi-exclamation-circle me-2"></i>Allergens
+                                </div>
+                                <div class="info-content"><?php echo $fetch_product['allergens']; ?></div>
+                            </div>
+                            
+                            <div class="info-card">
+                                <div class="info-title">
+                                    <i class="bi bi-snow me-2"></i>Storage
+                                </div>
+                                <div class="info-content"><?php echo $fetch_product['storage']; ?></div>
+                            </div>
+                        </div>
+
+                        <div class="specifications">
+                            <h3 class="spec-title">Product Specifications</h3>
+                            <div class="spec-item">
+                                <div class="spec-label">Size</div>
+                                <div class="spec-value">10 inches</div>
+                            </div>
+                            <div class="spec-item">
+                                <div class="spec-label">Serves</div>
+                                <div class="spec-value">5-8 people</div>
+                            </div>
+                            <div class="spec-item">
+                                <div class="spec-label">Best Before</div>
+                                <div class="spec-value">3-4 days when refrigerated</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <?php } ?>
     </main>
-    <!-- End #main -->
 
-    <!-- ======= Footer ======= -->
     <?php include 'footer.php'; ?>
-    <!-- End Footer -->
 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+    </script>
 
-    <div id="preloader"></div>
-    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-    <!-- Scripts  -->
     <?php include 'scripts.php'; ?>
-    <!-- End Scripts -->
-  </body>
-
+</body>
 </html>

@@ -1,0 +1,113 @@
+/* Custom Colors */
+:root {
+    --primary-color: #EA5A1E;
+    --secondary-color: #5D4638;
+    --background-color: #FCF9F6;
+    --accent-color: #E0B444;
+}
+
+/* Typography */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--background-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Alice', serif;
+}
+
+/* Header Styles */
+#header {
+    background: rgba(252, 249, 246, 0.95);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+#header.header-scrolled {
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+.navbar a {
+    color: var(--secondary-color);
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover,
+.navbar .active {
+    color: var(--primary-color);
+}
+
+/* Hero Section */
+#hero {
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+#hero h3 {
+    color: var(--secondary-color);
+    font-size: 3.5rem;
+    line-height: 1.2;
+    margin-bottom: 2rem;
+}
+
+.btn-custom {
+    background: var(--primary-color);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-custom:hover {
+    background: #D64E15;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(234, 90, 30, 0.3);
+    color: white;
+}
+
+/* Best Sellers Section */
+.cake-card {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.card-title {
+    color: var(--secondary-color);
+    font-size: 1.25rem;
+}
+
+/* Footer */
+.footer {
+    background: var(--background-color);
+    border-top: 4px solid var(--accent-color);
+}
+
+/* Animations */
+.animate-fade-up {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 0.6s ease forwards;
+}
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #hero h3 {
+        font-size: 2.5rem;
+    }
+    
+    .cake-card {
+        margin-bottom: 2rem;
+    }
+}
