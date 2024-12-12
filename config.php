@@ -3,5 +3,5 @@
 ?>
 
 <?php
-   $conn = mysqli_connect('https://dolisbyvicky.shop/','u749805223_dolis_db','Dolisbyvicky@12345678','u749805223_dolis_db') or die('connection failed');
+   $conn = mysqli_connect('dolisbyvicky.shop','u749805223_dolis_db','Dolisbyvicky@12345678','u749805223_dolis_db') or die('connection failed');
 ?>
