@@ -22,15 +22,6 @@ $pageKeywords = isset($pageKeywords) ? $pageKeywords : 'cakes, pastries, bakery,
     })(window,document,'script','dataLayer','GTM-PBGNBW8K');</script>
     <!-- End Google Tag Manager -->
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TE7PZBBWP0"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-TE7PZBBWP0');
-    </script>
    
     <!-- Open Graph / Social Media Meta Tags -->
     <meta property="og:title" content="<?php echo htmlspecialchars($pageTitle); ?>">
