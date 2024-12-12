@@ -453,7 +453,7 @@ include 'config.php';
                     Handcrafted with love, our cakes bring sweetness to your special moments.
                 </p>
                 <a href="menu.php" class="btn btn-custom animate__animated animate__fadeInUp animate__delay-1s">
-                    Explore Our Cakes
+                    Explore Our Products
                 </a>
             </div>
         </div>
@@ -896,7 +896,7 @@ include 'config.php';
                                 <small class="text-muted">Follow us for daily posts</small>
                             </div>
                         </div>
-                        <a href="https://www.facebook.com/dolisbyvicky/" target="_blank" class="btn btn-outline-primary btn-sm rounded-pill">
+                        <a href="https://www.facebook.com/profile.php?id=61570023253964" target="_blank" class="btn btn-outline-primary btn-sm rounded-pill">
                             <i class="bi bi-box-arrow-up-right me-1"></i> Visit Page
                         </a>
                     </div>

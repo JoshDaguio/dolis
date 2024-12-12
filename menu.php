@@ -162,7 +162,7 @@ body {
         .product-title {
             font-size: 1.25rem;
             font-weight: 600;
-            color: #1a1a1a;
+            color: #60aba7;
             margin-bottom: 0.5rem;
         }
 
@@ -180,7 +180,7 @@ body {
         .view-details-btn {
             display: inline-block;
             width: 100%;
-            background: linear-gradient(45deg, #bb3b47, #ff7b5c);
+            background: #bb3b47;
             color: white;
             padding: 0.75rem 1.5rem;
             border-radius: 10px;
