@@ -49,7 +49,7 @@
                     </li>
                     <li class="d-flex align-items-center mb-3">
                         <i class="bi bi-telephone me-2"></i>
-                        <span>0905 474 7023</span>
+                        <a href="tel:09054747023" class="text-muted">0905 474 7023</a>
                     </li>
                     <li class="d-flex align-items-center mb-3">
                         <i class="bi bi-envelope me-2"></i>
