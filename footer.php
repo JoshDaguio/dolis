@@ -58,7 +58,7 @@
                     </li>
                     <li class="d-flex align-items-center mb-3">
                         <i class="bi bi-clock me-2"></i>
-                        <span>Mon - Sun: 8:00 AM - 8:00 PM</span>
+                        <span>Mon - Fri: 9:00 AM - 5:00 PM</span>
                     </li>
                 </ul>
             </div>

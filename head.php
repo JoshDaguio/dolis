@@ -12,7 +12,25 @@ $pageKeywords = isset($pageKeywords) ? $pageKeywords : 'cakes, pastries, bakery,
     <meta name="description" content="<?php echo htmlspecialchars($pageDescription); ?>">
     <meta name="keywords" content="<?php echo htmlspecialchars($pageKeywords); ?>">
     <meta name="author" content="Dolis Cakes & Pastries">
-    
+      
+    <!-- Google Tag Manager -->
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MJ42LCQN');</script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TE7PZBBWP0"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-TE7PZBBWP0');
+    </script>
+   
     <!-- Open Graph / Social Media Meta Tags -->
     <meta property="og:title" content="<?php echo htmlspecialchars($pageTitle); ?>">
     <meta property="og:description" content="<?php echo htmlspecialchars($pageDescription); ?>">
@@ -296,26 +314,9 @@ document.addEventListener('DOMContentLoaded', function() {
             document.write('<script src="https://cdn.jsdelivr.net/npm/promise-polyfill@8/dist/polyfill.min.js"><\/script>');
         }
     </script>
-</head>
+
     <!-- CSS File -->
     <link href="assets/css/style.css" rel="stylesheet">
 
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-MJ42LCQN');</script>
-    <!-- End Google Tag Manager -->
-
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TE7PZBBWP0"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-TE7PZBBWP0');
-    </script>
-   
+  
   </head>
